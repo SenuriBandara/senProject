@@ -20,7 +20,7 @@ products = {
 }
 
 # ---------------- TITLE ----------------
-st.title("🛒 Simple POS System")
+st.title("🛒 POS System")
 st.write("Select items, add to cart, and generate total bill")
 
 # ---------------- ADD PRODUCT ----------------
