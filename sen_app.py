@@ -37,10 +37,10 @@ st.markdown("""
     margin: 20px 0;
 }
 
-/* WHITE OVERVIEW TEXT */
+/* PROGRAM OVERVIEW (WHITE TEXT) */
 .overview-box {
     background: linear-gradient(120deg, #0b1220, #1e3a8a);
-    padding: 35px;
+    padding: 40px;
     border-radius: 18px;
     color: white;
     margin-bottom: 25px;
@@ -82,7 +82,7 @@ st.markdown("""
     color: #111827;
 }
 
-/* SMALL INCLUSION CARD */
+/* SMALL CARD */
 .small-card {
     background: white;
     padding: 16px;
@@ -186,7 +186,6 @@ st.divider()
 st.markdown("## Program Inclusions")
 
 included = [
-
 ("International Internship Placement", "Structured global internship aligned to your career path."),
 ("Learning & Development Workshops", "Expert-led sessions for professional growth."),
 ("Career Acceleration Support", "Tools to strengthen employability."),
@@ -197,15 +196,12 @@ included = [
 ("Accommodation Guidance", "Support in finding safe housing."),
 ("Arrival & Transition Support", "Smooth onboarding support."),
 ("Cultural Immersion Experiences", "Activities for real cultural engagement.")
-
 ]
 
 cols = st.columns(2)
 
 for i, (title, desc) in enumerate(included):
-
     with cols[i % 2]:
-
         st.markdown(f"""
 <div class="small-card">
 <b>{title}</b><br>
@@ -234,9 +230,7 @@ pricing = [
 cols = st.columns(4)
 
 for i, (duration, full, without) in enumerate(pricing):
-
     with cols[i % 4]:
-
         st.markdown(f"""
 <div class="price-box">
 
