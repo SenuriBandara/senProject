@@ -5,109 +5,149 @@ st.set_page_config(page_title="Cultural Infusion Fellowship", layout="wide")
 # ---------- STYLES ----------
 st.markdown("""
 <style>
-.main-title {
+.hero {
+    padding: 70px 40px;
+    background: linear-gradient(to right, #0f172a, #1e3a8a);
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.section {
+    padding: 30px 10px;
+}
+
+.title {
     font-size: 42px;
     font-weight: 700;
-    text-align: center;
-    margin-top: 30px;
 }
 
 .subtitle {
     font-size: 20px;
-    text-align: center;
-    color: #555;
-    margin-bottom: 40px;
+    margin-top: 10px;
+    color: #e5e7eb;
 }
 
-.section-title {
-    font-size: 28px;
-    font-weight: 600;
-    margin-top: 40px;
+.btn {
+    background-color: #f59e0b;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
 }
 
-.box {
-    background-color: #f8f9fa;
+.card {
     padding: 20px;
     border-radius: 12px;
-    margin-bottom: 15px;
-    border-left: 5px solid #1e3a8a;
-}
-
-.highlight {
-    background: linear-gradient(to right, #1e3a8a, #0f172a);
-    color: white;
-    padding: 40px;
-    border-radius: 15px;
+    background: #f8f9fa;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     text-align: center;
 }
 </style>
 """, unsafe_allow_html=True)
 
 # ---------- HERO ----------
-st.markdown('<div class="highlight">', unsafe_allow_html=True)
-st.markdown("# Cultural Infusion Fellowship")
-st.markdown("### Where Talent, Opportunity, and Culture Converge")
-st.markdown("</div>", unsafe_allow_html=True)
+st.markdown("""
+<div class="hero">
+    <div class="title">Cultural Infusion Fellowship</div>
+    <div class="subtitle">
+        Experience global cultures, develop future-ready skills, and grow through immersive international opportunities.
+    </div>
+    <a class="btn">Apply Now</a>
+</div>
+""", unsafe_allow_html=True)
 
 st.write("")
 
-# ---------- DESCRIPTION ----------
-st.markdown("""
-A youth-focused global ecosystem designed to develop globally competent talent through structured development experiences and international mobility pathways.
+# ---------- FEATURE STRIP ----------
+st.markdown("### FEATURED ON GLOBAL YOUTH & EDUCATION NETWORKS")
+st.write("⭐⭐⭐⭐⭐ Trusted by universities, institutions, and global partners")
 
-The initiative connects youth, universities, companies, and institutions through an integrated system that links engagement with skill development and real-world global exposure.
+st.divider()
+
+# ---------- INTRO ----------
+st.markdown("""
+## In-Person Fellowship Program
+
+Experience new cultures and lifestyles with complete immersion in a new location.  
+The Cultural Infusion Fellowship is designed for young people who want to travel, learn, and grow while engaging in meaningful global experiences.
+
+You will connect with diverse communities, build international friendships, and gain exposure to real-world professional environments that shape your global career journey.
 """)
 
 st.divider()
 
-# ---------- OBJECTIVES ----------
-st.markdown("## 🎯 Primary Objectives for Cultural Infusion")
+# ---------- BOOST EMPLOYABILITY ----------
+st.markdown("## 🚀 Boost Your Employability")
 
-objectives = [
-"Establish a scalable global youth platform that extends Cultural Infusion’s impact beyond programs into a structured, long-term ecosystem",
-"Strengthen market positioning in intercultural development by embedding cultural intelligence into career pathways and global mobility",
-"Create sustainable revenue streams through structured programs, partnerships, and global opportunities aligned with the organisation’s mission",
-"Build a strong talent pipeline and community that continuously engages youth and feeds into multiple program offerings",
-"Expand strategic partnerships with universities, companies, and institutions to increase reach, credibility, and long-term collaboration",
-"Leverage existing demand to drive growth by converting interest into structured, repeatable programs",
-"Enhance brand visibility and global presence by positioning Cultural Infusion as a leader in youth development and intercultural capability",
-"Develop scalable systems and operating models that can be replicated across regions and markets"
-]
+st.markdown("""
+The Cultural Infusion Fellowship offers structured in-person experiences designed for professional and personal development.
 
-for i, obj in enumerate(objectives, 1):
-    st.markdown(f"**{i}.** {obj}")
+Participants gain exposure across multiple fields, combining real-world experience with cultural immersion.  
+This program helps you build:
 
-st.divider()
+- Global mindset  
+- Cross-cultural communication skills  
+- Professional industry experience  
+- International network  
+- Leadership and independence  
 
-# ---------- COMMERCIAL PATHWAYS ----------
-st.markdown("## 💼 Commercial Pathways")
-
-pathways = {
-"Structured Internship Programs (Internal)": 
-"Delivery of in-house internship experiences within Cultural Infusion, providing youth with practical exposure and structured development.",
-
-"External Internship Placements":
-"Coordination of internship opportunities with partner organisations, connecting youth with real-world industry environments.",
-
-"Premium Global Experience Programs":
-"Curated programs combining internships, travel, and cultural immersion for international exposure.",
-
-"International Student Placement Pathways":
-"Facilitation of student placements into Australian universities through institutional partnerships.",
-
-"Cultural Exchange Programs":
-"Overseas cultural learning experiences for students focusing on global exposure.",
-
-"Sponsorship & Institutional Partnerships":
-"Collaboration with organisations aligned with youth, culture, and global mobility."
-}
-
-for title, desc in pathways.items():
-    st.markdown(f"### {title}")
-    st.markdown(f'<div class="box">{desc}</div>', unsafe_allow_html=True)
+By completing the fellowship, you demonstrate adaptability, curiosity, and the ability to thrive in diverse environments — qualities highly valued by global employers.
+""")
 
 st.divider()
 
-# ---------- FOOTER CTA ----------
-st.markdown("## 🚀 Strategic Vision")
-st.info("Building a scalable global ecosystem that connects youth, culture, education, and industry into one integrated growth platform.")
+# ---------- EXPERIENCE ----------
+st.markdown("## 🌍 Explore, Adventure, and Make Friends")
+
+col1, col2 = st.columns([1,1])
+
+with col1:
+    st.markdown("""
+You’ll experience a new country while being fully supported by our on-the-ground team.
+
+- Work in a real professional environment  
+- Join cultural and social experiences  
+- Live with a global community of fellows  
+- Travel and explore your host city  
+""")
+
+with col2:
+    st.info("""
+✨ What makes this special:
+
+- Immersive cultural experience  
+- Global peer network  
+- Career-focused learning  
+- Lifelong friendships  
+""")
+
+st.divider()
+
+# ---------- SUPPORT ----------
+st.markdown("## 🤝 How We Support You")
+
+c1, c2, c3, c4 = st.columns(4)
+
+with c1:
+    st.success("🛂 Visa Support\nGuidance before and during your journey")
+
+with c2:
+    st.success("🌍 On-the-Ground Team\nLocal support in every destination")
+
+with c3:
+    st.success("🎉 Orientation\nMeet your peers & explore your city")
+
+with c4:
+    st.success("📞 24/7 Support\nAlways available when you need help")
+
+st.divider()
+
+# ---------- CTA ----------
+st.markdown("## ✈️ Ready to Start Your Journey?")
+
+if st.button("Apply Now"):
+    st.success("Thanks! Our team will contact you soon regarding your application.")
