@@ -1,168 +1,101 @@
-import streamlit as st
-import pandas as pd
-
-st.set_page_config(page_title="Cultural Infusion Fellowship", layout="wide")
-
 # =========================
-# STYLES
+# WHAT'S INCLUDED (PREMIUM CARDS)
 # =========================
+st.markdown("## Program Inclusions")
+
 st.markdown("""
 <style>
-
-.hero {
-    padding: 70px 40px;
-    background: linear-gradient(to right, #0f172a, #1e3a8a);
-    color: white;
-    border-radius: 18px;
-    text-align: center;
+.included-card {
+    background: #ffffff;
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    height: 100%;
+    border-left: 4px solid #1e3a8a;
 }
 
-.hero h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 18px;
-    color: #e5e7eb;
-}
-
-.text {
+.included-title {
     font-size: 16px;
-    color: #333;
-    line-height: 1.7;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #111;
 }
 
-.support-card {
-    background: white;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    text-align: center;
+.included-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
 }
-
 </style>
 """, unsafe_allow_html=True)
 
 # =========================
-# HERO
+# DATA (GROUPED)
 # =========================
-st.markdown("""
-<div class="hero">
-    <h1>Cultural Infusion Fellowship</h1>
-    <p>Where Talent, Opportunity, and Culture Converge</p>
-</div>
-""", unsafe_allow_html=True)
+core = [
+("International Internship Placement",
+"Real-world in-person internship experience in a global environment."),
 
-st.write("")
+("Workshop & Learning Series",
+"Structured sessions designed to build practical and professional skills."),
 
-# =========================
-# PROGRAM OVERVIEW
-# =========================
-st.markdown("## Program Overview")
+("Professional Development Resources",
+"Tools and materials to support continuous career growth."),
 
-st.markdown("""
-<div class="text">
-A youth-focused global ecosystem designed to develop globally competent talent through structured development experiences and international mobility pathways.
+("Career Acceleration Training",
+"Focused training to improve employability and job readiness."),
 
-The initiative connects youth, universities, companies, and institutions through an integrated system that links engagement with skill development and real-world global exposure.
-</div>
-""", unsafe_allow_html=True)
-
-st.divider()
-
-# =========================
-# EXPERIENCE
-# =========================
-st.markdown("## Experience Overview")
-
-col1, col2 = st.columns(2)
-
-with col1:
-    st.markdown("""
-### Professional Development
-- Real-world internship exposure  
-- Industry-based learning environments  
-- Skill and career development  
-- Leadership growth opportunities  
-""")
-
-with col2:
-    st.markdown("""
-### Global Exposure
-- Cultural immersion in new environments  
-- International peer engagement  
-- Community and networking opportunities  
-- Cross-cultural collaboration  
-""")
-
-st.divider()
-
-# =========================
-# SUPPORT
-# =========================
-st.markdown("## Support Structure")
-
-c1, c2, c3, c4 = st.columns(4)
-
-with c1:
-    st.markdown("""
-### Visa Support
-End-to-end guidance for travel documentation
-""")
-
-with c2:
-    st.markdown("""
-### Local Team
-On-ground assistance in all destinations
-""")
-
-with c3:
-    st.markdown("""
-### Orientation
-Structured onboarding and cultural preparation
-""")
-
-with c4:
-    st.markdown("""
-### 24/7 Support
-Continuous assistance throughout the program
-""")
-
-st.divider()
-
-# =========================
-# PRICING TABLE
-# =========================
-st.markdown("## Program Pricing")
-
-data = [
-("4 Weeks", 9340, 5600),
-("6 Weeks", 9585, 5600),
-("8 Weeks", 11440, 5600),
-("10 Weeks", 13295, 5600),
-("12 Weeks", 15290, 6600),
-("16 Weeks", 18730, 6600),
-("20 Weeks", 21460, 6600),
-("24 Weeks", 24150, 6600),
+("Global Community Access",
+"Connect and collaborate with a diverse international network of participants.")
 ]
 
-df = pd.DataFrame(data, columns=[
-    "Duration",
-    "Full Program (Avg AU$)",
-    "Without Accommodation (AU$)"
-])
+career = [
+("Alumni Mentorship & Guidance",
+"Ongoing support from past participants and industry mentors."),
 
-st.table(df)
+("CV & Profile Enhancement",
+"Professional support to improve employability documents and profiles."),
 
-st.divider()
+("1-1 Dedicated Advisory Support",
+"Personal guidance throughout the full program journey.")
+]
+
+support = [
+("24/7 Participant Support",
+"Continuous assistance throughout the program duration."),
+
+("Visa Guidance Support",
+"Structured help with visa preparation and documentation."),
+
+("Accommodation Assistance",
+"Support in securing housing options where applicable."),
+
+("Airport Arrival Support",
+"Guidance and coordination upon arrival in destination country."),
+
+("Cultural & Social Integration",
+"Activities and events to support cultural immersion and connection.")
+]
 
 # =========================
-# CTA
+# RENDER CARDS
 # =========================
-st.markdown("## Ready to Begin Your Journey")
+def render_cards(items):
+    cols = st.columns(3)
+    for i, (title, desc) in enumerate(items):
+        with cols[i % 3]:
+            st.markdown(f"""
+            <div class="included-card">
+                <div class="included-title">{title}</div>
+                <div class="included-text">{desc}</div>
+            </div>
+            """, unsafe_allow_html=True)
 
-st.write("Submit your application to be considered for upcoming cohorts.")
+st.markdown("### Core Experience")
+render_cards(core)
 
-if st.button("Apply Now"):
-    st.success("Application received. Our team will contact you shortly.")
+st.markdown("### Career & Growth Support")
+render_cards(career)
+
+st.markdown("### Program Support Services")
+render_cards(support)
