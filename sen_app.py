@@ -8,7 +8,6 @@ st.set_page_config(page_title="Cultural Infusion Fellowship", layout="wide")
 st.markdown("""
 <style>
 
-/* GLOBAL LAYOUT */
 .block-container {
     padding: 2rem 5rem;
     max-width: 100%;
@@ -26,7 +25,6 @@ st.markdown("""
     }
 }
 
-/* APPLY ANIMATION */
 .hero, .overview-box, .card, .small-card, .price-box, .cta {
     animation: fadeUp 0.8s ease-in-out;
 }
@@ -51,53 +49,70 @@ st.markdown("""
     color: #e2e8f0;
 }
 
-/* OVERVIEW BOX (BLUE THEME) */
+/* =========================
+   UPGRADED OVERVIEW DESIGN
+   ========================= */
 .overview-box {
     background: linear-gradient(120deg, #0b1220, #1e3a8a);
-    padding: 40px;
-    border-radius: 18px;
+    padding: 60px 50px;
+    border-radius: 22px;
     color: white;
-    margin-bottom: 25px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    margin-bottom: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
 }
 
-/* CARD (BLUE THEME) */
+/* BIG TITLE */
+.overview-title {
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+/* SUB TITLE */
+.overview-subtitle {
+    font-size: 18px;
+    color: #cbd5f5;
+    margin-bottom: 25px;
+}
+
+/* BODY TEXT */
+.overview-text {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #ffffff;
+    max-width: 900px;
+}
+
+/* CARD */
 .card {
     background: linear-gradient(120deg, #0b1220, #1e3a8a);
     padding: 22px;
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    border: 1px solid rgba(255,255,255,0.08);
     margin-bottom: 18px;
     color: white;
 }
 
-/* SMALL CARD (BLUE THEME) */
+/* SMALL CARD */
 .small-card {
     background: linear-gradient(120deg, #0b1220, #1e3a8a);
     padding: 16px;
     border-radius: 14px;
     box-shadow: 0 8px 18px rgba(0,0,0,0.12);
-    border-left: 4px solid #60a5fa;
     margin-bottom: 12px;
     color: white;
+    border-left: 4px solid #60a5fa;
 }
 
-/* PRICE BOX (BLUE THEME) */
+/* PRICE BOX */
 .price-box {
     background: linear-gradient(120deg, #0b1220, #1e3a8a);
     padding: 20px;
     border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    border: 1px solid rgba(255,255,255,0.08);
     text-align: center;
-    margin-bottom: 20px;
     color: white;
-    transition: 0.3s ease;
-}
-
-.price-box:hover {
-    transform: translateY(-5px);
+    margin-bottom: 20px;
 }
 
 /* CTA */
@@ -108,10 +123,6 @@ st.markdown("""
     border-radius: 20px;
     text-align: center;
     margin-top: 40px;
-}
-
-.cta p {
-    color: #e2e8f0;
 }
 
 </style>
@@ -128,21 +139,26 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # =========================
-# PROGRAM OVERVIEW
+# PROGRAM OVERVIEW (UPGRADED LAYOUT)
 # =========================
 st.markdown("""
 <div class="overview-box">
-<h2>Program Overview</h2>
 
-<p>
-Building Future Global Leaders<br><br>
+<div class="overview-title">
+Program Overview
+</div>
 
+<div class="overview-subtitle">
+Building Future Global Leaders
+</div>
+
+<div class="overview-text">
 The Cultural Infusion Fellowship is a globally connected development experience designed to shape future-ready talent.<br><br>
 
 It blends international exposure, professional development, and cultural immersion into one structured journey.<br><br>
 
-Participants gain real-world experience, build globally relevant skills, and engage with diverse cultures and industries.
-</p>
+Participants gain real-world experience, build globally relevant skills, and engage with diverse cultures and industries, preparing them for impactful international careers.
+</div>
 
 </div>
 """, unsafe_allow_html=True)
