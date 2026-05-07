@@ -33,14 +33,6 @@ st.markdown("""
     line-height: 1.7;
 }
 
-.box {
-    background: #f8f9fa;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    border-left: 4px solid #1e3a8a;
-}
-
 .support-card {
     background: white;
     padding: 15px;
@@ -80,27 +72,6 @@ The initiative connects youth, universities, companies, and institutions through
 st.divider()
 
 # =========================
-# OBJECTIVES
-# =========================
-st.markdown("## Primary Objectives")
-
-objectives = [
-"Establish a scalable global youth platform extending impact beyond programs",
-"Strengthen intercultural development and global mobility pathways",
-"Create sustainable revenue through structured programs and partnerships",
-"Build a strong global talent pipeline and community",
-"Expand partnerships with universities and companies",
-"Convert demand into structured and repeatable programs",
-"Enhance global brand visibility",
-"Develop scalable systems across regions and markets"
-]
-
-for i, obj in enumerate(objectives, 1):
-    st.markdown(f"{i}. {obj}")
-
-st.divider()
-
-# =========================
 # EXPERIENCE
 # =========================
 st.markdown("## Experience Overview")
@@ -128,7 +99,7 @@ with col2:
 st.divider()
 
 # =========================
-# SUPPORT (FIXED)
+# SUPPORT
 # =========================
 st.markdown("## Support Structure")
 
