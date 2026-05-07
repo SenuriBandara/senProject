@@ -37,9 +37,24 @@ st.markdown("""
     margin: 20px 0;
 }
 
-/* SUBTEXT */
-.subtext {
-    color: #1f2937;
+/* WHITE OVERVIEW TEXT */
+.overview-box {
+    background: linear-gradient(120deg, #0b1220, #1e3a8a);
+    padding: 35px;
+    border-radius: 18px;
+    color: white;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.overview-box h2 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.overview-box p {
+    color: #e2e8f0;
     font-size: 16px;
     line-height: 1.8;
 }
@@ -67,21 +82,7 @@ st.markdown("""
     color: #111827;
 }
 
-/* CTA */
-.cta {
-    background: linear-gradient(120deg, #0b1220, #1e3a8a);
-    color: white;
-    padding: 70px;
-    border-radius: 20px;
-    text-align: center;
-    margin-top: 40px;
-}
-
-.cta p {
-    color: #e2e8f0;
-}
-
-/* SMALL INCLUSION BOX */
+/* SMALL INCLUSION CARD */
 .small-card {
     background: white;
     padding: 16px;
@@ -102,6 +103,20 @@ st.markdown("""
     margin-top: 5px;
 }
 
+/* CTA */
+.cta {
+    background: linear-gradient(120deg, #0b1220, #1e3a8a);
+    color: white;
+    padding: 70px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.cta p {
+    color: #e2e8f0;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -116,29 +131,19 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # =========================
-# OVERVIEW
+# PROGRAM OVERVIEW (UPDATED)
 # =========================
-st.markdown("## Program Overview")
-
 st.markdown("""
-<div class="section-title">Building Future Global Leaders</div>
+<div class="overview-box">
+    <h2>Program Overview</h2>
 
-<div class="subtext">
-The Cultural Infusion Fellowship combines international experience, professional development, and cultural learning into one immersive journey.<br><br>
-
-Designed for ambitious young individuals, the program provides opportunities to gain practical industry exposure, develop globally relevant skills, and build meaningful international connections.
-</div>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-<div class="section-title">Key Areas</div>
-
-<div class="subtext">
-Global Internships<br>
-Professional Growth<br>
-Cultural Immersion<br>
-International Networking<br>
-Career Development
+    <p>
+        The Cultural Infusion Fellowship is a globally connected development experience designed to shape future-ready talent.
+        It blends international exposure, professional development, and cultural immersion into one structured journey.
+        <br><br>
+        Participants gain real-world experience, build globally relevant skills, and engage with diverse cultures and industries,
+        preparing them for impactful international careers.
+    </p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -176,32 +181,22 @@ with col2:
 st.divider()
 
 # =========================
-# PROGRAM INCLUSIONS (IMPROVED UI)
+# INCLUSIONS
 # =========================
 st.markdown("## Program Inclusions")
 
 included = [
 
-("International Internship Placement",
-"Structured global internship aligned to your career path."),
-("Learning & Development Workshops",
-"Expert-led sessions for professional growth."),
-("Career Acceleration Support",
-"Tools to strengthen employability."),
-("Global Talent Network Access",
-"Connect with international peers and mentors."),
-("1:1 Mentorship & Advisory",
-"Guidance from experienced professionals."),
-("Professional Branding & CV Development",
-"Build a strong global-ready profile."),
-("Visa & Documentation Support",
-"Assistance throughout visa process."),
-("Accommodation Guidance",
-"Support in finding safe housing."),
-("Arrival & Transition Support",
-"Smooth onboarding support."),
-("Cultural Immersion Experiences",
-"Activities for real cultural engagement.")
+("International Internship Placement", "Structured global internship aligned to your career path."),
+("Learning & Development Workshops", "Expert-led sessions for professional growth."),
+("Career Acceleration Support", "Tools to strengthen employability."),
+("Global Talent Network Access", "Connect with international peers and mentors."),
+("1:1 Mentorship & Advisory", "Guidance from experienced professionals."),
+("Professional Branding & CV Development", "Build a strong global-ready profile."),
+("Visa & Documentation Support", "Assistance throughout visa process."),
+("Accommodation Guidance", "Support in finding safe housing."),
+("Arrival & Transition Support", "Smooth onboarding support."),
+("Cultural Immersion Experiences", "Activities for real cultural engagement.")
 
 ]
 
