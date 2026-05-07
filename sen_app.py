@@ -27,30 +27,23 @@ st.markdown("""
     color: #e5e7eb;
 }
 
-.section-title {
-    font-size: 28px;
-    font-weight: 700;
-    margin-top: 50px;
-    margin-bottom: 10px;
-}
-
 .text {
     font-size: 16px;
     color: #333;
     line-height: 1.7;
 }
 
-.block {
+.box {
     background: #f8f9fa;
-    padding: 18px;
-    border-radius: 12px;
+    padding: 15px;
+    border-radius: 10px;
     margin-bottom: 10px;
     border-left: 4px solid #1e3a8a;
 }
 
-.support-box {
-    background: #ffffff;
-    padding: 18px;
+.support-card {
+    background: white;
+    padding: 15px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     text-align: center;
@@ -135,7 +128,7 @@ with col2:
 st.divider()
 
 # =========================
-# SUPPORT
+# SUPPORT (FIXED)
 # =========================
 st.markdown("## Support Structure")
 
@@ -143,44 +136,36 @@ c1, c2, c3, c4 = st.columns(4)
 
 with c1:
     st.markdown("""
-<div class="support-box">
-Visa Support<br>
+### Visa Support
 End-to-end guidance for travel documentation
-</div>
-""", unsafe_allow_html=True)
+""")
 
 with c2:
     st.markdown("""
-<div class="support-box">
-Local Team<br>
+### Local Team
 On-ground assistance in all destinations
-</div>
-""", unsafe_allow_html=True)
+""")
 
 with c3:
     st.markdown("""
-<div class="support-box">
-Orientation<br>
+### Orientation
 Structured onboarding and cultural preparation
-</div>
-""", unsafe_allow_html=True)
+""")
 
 with c4:
     st.markdown("""
-<div class="support-box">
-24/7 Support<br>
+### 24/7 Support
 Continuous assistance throughout the program
-</div>
-""", unsafe_allow_html=True)
+""")
 
 st.divider()
 
 # =========================
-# PRICING TABLE (KEPT)
+# PRICING TABLE
 # =========================
 st.markdown("## Program Pricing")
 
-pricing = [
+data = [
 ("4 Weeks", 9340, 5600),
 ("6 Weeks", 9585, 5600),
 ("8 Weeks", 11440, 5600),
@@ -191,13 +176,15 @@ pricing = [
 ("24 Weeks", 24150, 6600),
 ]
 
-df = pd.DataFrame(pricing, columns=[
+df = pd.DataFrame(data, columns=[
     "Duration",
     "Full Program (Avg AU$)",
     "Without Accommodation (AU$)"
 ])
 
 st.table(df)
+
+st.divider()
 
 # =========================
 # CTA
