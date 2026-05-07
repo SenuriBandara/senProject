@@ -8,14 +8,14 @@ st.set_page_config(
 # =========================
 # GLOBAL STYLES
 # =========================
-styles = """
+st.markdown("""
 <style>
 
 .main {
     background-color: #ffffff;
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero {
     padding: 90px 50px;
     background: linear-gradient(135deg, #0b1220 0%, #1e3a8a 100%);
@@ -39,7 +39,7 @@ styles = """
     line-height: 1.8;
 }
 
-/* TITLES */
+/* SECTION TITLES */
 .section-title {
     font-size: 30px;
     font-weight: 700;
@@ -47,14 +47,14 @@ styles = """
     color: #0f172a;
 }
 
-/* TEXT */
+/* GENERAL TEXT */
 .subtext {
     font-size: 16px;
     color: #475569;
     line-height: 1.9;
 }
 
-/* OVERVIEW */
+/* PROGRAM OVERVIEW */
 .overview-box {
     background: #f8fafc;
     padding: 32px;
@@ -71,7 +71,7 @@ styles = """
     height: 100%;
 }
 
-/* CARDS */
+/* INCLUSION CARDS */
 .card {
     background: white;
     padding: 22px;
@@ -95,7 +95,7 @@ styles = """
     line-height: 1.7;
 }
 
-/* PRICING */
+/* PRICING CARDS */
 .price-card {
     background: white;
     padding: 24px;
@@ -116,11 +116,11 @@ styles = """
 .price-value {
     font-size: 15px;
     color: #334155;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     line-height: 1.7;
 }
 
-/* CTA */
+/* CTA SECTION */
 .cta-box {
     background: linear-gradient(135deg, #0b1220 0%, #1e3a8a 100%);
     padding: 55px;
@@ -141,23 +141,20 @@ styles = """
 }
 
 </style>
-"""
-
-st.markdown(styles, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
 # =========================
 # HERO SECTION
 # =========================
-hero_html = """
+st.markdown("""
 <div class="hero">
     <h1>Cultural Infusion Fellowship</h1>
+
     <p>
         Where Talent, Opportunity, and Culture Converge
     </p>
 </div>
-"""
-
-st.markdown(hero_html, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
 # =========================
 # PROGRAM OVERVIEW
@@ -168,7 +165,7 @@ col1, col2 = st.columns([2, 1])
 
 with col1:
 
-    overview_html = """
+    st.markdown("""
     <div class="overview-box">
 
         <div class="section-title">
@@ -176,23 +173,17 @@ with col1:
         </div>
 
         <div class="subtext">
-            The Cultural Infusion Fellowship combines international experience,
-            professional development, and cultural learning into one immersive journey.
-            <br><br>
+            The Cultural Infusion Fellowship combines international experience, professional development, and cultural learning into one immersive journey.<br><br>
 
-            Designed for ambitious young individuals, the program provides opportunities
-            to gain practical industry exposure, develop globally relevant skills,
-            and build meaningful international connections in diverse environments.
+            Designed for ambitious young individuals, the program provides opportunities to gain practical industry exposure, develop globally relevant skills, and build meaningful international connections in diverse environments.
         </div>
 
     </div>
-    """
-
-    st.markdown(overview_html, unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
 with col2:
 
-    focus_html = """
+    st.markdown("""
     <div class="focus-box">
 
         <div class="section-title">
@@ -208,9 +199,7 @@ with col2:
         </div>
 
     </div>
-    """
-
-    st.markdown(focus_html, unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
 st.write("")
 st.divider()
@@ -223,6 +212,7 @@ st.markdown("## Learning & Experience Pathway")
 exp1, exp2 = st.columns(2)
 
 with exp1:
+
     st.markdown("""
     ### Professional Development
 
@@ -233,6 +223,7 @@ with exp1:
     """)
 
 with exp2:
+
     st.markdown("""
     ### Global Exposure
 
@@ -281,29 +272,34 @@ included = [
 
 ("Cultural Integration Activities",
 "Experiences and events designed for immersion and networking.")
+
 ]
 
-cols = st.columns(3)
+def render_cards(data):
 
-for i, (title, desc) in enumerate(included):
+    cols = st.columns(3)
 
-    with cols[i % 3]:
+    for i, (title, desc) in enumerate(data):
 
-        card_html = f"""
-        <div class="card">
+        with cols[i % 3]:
 
-            <div class="card-title">
-                {title}
+            card_html = f"""
+            <div class="card">
+
+                <div class="card-title">
+                    {title}
+                </div>
+
+                <div class="card-text">
+                    {desc}
+                </div>
+
             </div>
+            """
 
-            <div class="card-text">
-                {desc}
-            </div>
+            st.markdown(card_html, unsafe_allow_html=True)
 
-        </div>
-        """
-
-        st.markdown(card_html, unsafe_allow_html=True)
+render_cards(included)
 
 st.write("")
 st.divider()
@@ -330,7 +326,7 @@ for i, (duration, full, without) in enumerate(pricing):
 
     with price_cols[i % 4]:
 
-        price_html = f"""
+        card_html = f"""
         <div class="price-card">
 
             <div class="price-duration">
@@ -342,7 +338,7 @@ for i, (duration, full, without) in enumerate(pricing):
                 {full}
             </div>
 
-            <div class="price-value">
+            <div class="price-value" style="margin-top:15px;">
                 <b>Without Accommodation</b><br>
                 {without}
             </div>
@@ -350,7 +346,7 @@ for i, (duration, full, without) in enumerate(pricing):
         </div>
         """
 
-        st.markdown(price_html, unsafe_allow_html=True)
+        st.markdown(card_html, unsafe_allow_html=True)
 
 st.write("")
 st.divider()
@@ -358,7 +354,7 @@ st.divider()
 # =========================
 # CTA SECTION
 # =========================
-cta_html = """
+st.markdown("""
 <div class="cta-box">
 
     <h2>
@@ -366,15 +362,11 @@ cta_html = """
     </h2>
 
     <p>
-        Take the next step toward international experience,
-        professional growth, and global exposure through the
-        Cultural Infusion Fellowship.
+        Take the next step toward international experience, professional growth, and global exposure through the Cultural Infusion Fellowship.
     </p>
 
 </div>
-"""
-
-st.markdown(cta_html, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
 st.write("")
 
