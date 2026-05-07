@@ -53,14 +53,6 @@ st.markdown("""
     color: #555;
 }
 
-.support-box {
-    background: white;
-    padding: 18px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    text-align: center;
-}
-
 </style>
 """, unsafe_allow_html=True)
 
@@ -176,47 +168,6 @@ def render_cards(data):
             """, unsafe_allow_html=True)
 
 render_cards(included)
-
-st.divider()
-
-# =========================
-# SUPPORT STRUCTURE
-# =========================
-st.markdown("## Support Structure")
-
-c1, c2, c3, c4 = st.columns(4)
-
-with c1:
-    st.markdown("""
-<div class="support-box">
-Visa Support<br>
-End-to-end guidance for documentation
-</div>
-""", unsafe_allow_html=True)
-
-with c2:
-    st.markdown("""
-<div class="support-box">
-Local Team<br>
-On-ground assistance in all destinations
-</div>
-""", unsafe_allow_html=True)
-
-with c3:
-    st.markdown("""
-<div class="support-box">
-Orientation<br>
-Structured onboarding experience
-</div>
-""", unsafe_allow_html=True)
-
-with c4:
-    st.markdown("""
-<div class="support-box">
-24/7 Support<br>
-Continuous assistance throughout program
-</div>
-""", unsafe_allow_html=True)
 
 st.divider()
 
