@@ -3,208 +3,83 @@ import streamlit as st
 st.set_page_config(page_title="Cultural Infusion Fellowship", layout="wide")
 
 # =========================
-# CSS
+# HEADER
 # =========================
-st.markdown("""
-<style>
-
-/* HERO */
-.hero {
-    padding: 90px 40px;
-    background: linear-gradient(120deg, #0b1220, #1e3a8a);
-    border-radius: 20px;
-    text-align: center;
-    color: white;
-    margin-bottom: 40px;
-}
-
-.hero h1 {
-    font-size: 56px;
-    font-weight: 800;
-    color: white;
-}
-
-.hero p {
-    font-size: 20px;
-    color: #e2e8f0;
-}
-
-/* TEXT */
-.section-title {
-    font-size: 28px;
-    font-weight: 700;
-    color: #0f172a;
-    margin: 20px 0;
-}
-
-.subtext {
-    color: #334155;
-    font-size: 16px;
-    line-height: 1.8;
-}
-
-/* CARD */
-.card {
-    background: white;
-    padding: 22px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    border-top: 4px solid #1e3a8a;
-    margin-bottom: 18px;
-    color: #111827;
-}
-
-/* PRICE CARD */
-.price-card {
-    background: white;
-    padding: 25px;
-    border-radius: 18px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    border-top: 4px solid #1e3a8a;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #111827;
-}
-
-.price-duration {
-    font-size: 20px;
-    font-weight: 700;
-    color: #0f172a;
-}
-
-.price-value {
-    margin-top: 10px;
-    color: #334155;
-}
-
-.cta {
-    background: linear-gradient(120deg, #0b1220, #1e3a8a);
-    color: white;
-    padding: 70px;
-    border-radius: 20px;
-    text-align: center;
-    margin-top: 40px;
-}
-
-</style>
-""", unsafe_allow_html=True)
-
-# =========================
-# HERO
-# =========================
-st.markdown("""
-<div class="hero">
-    <h1>Cultural Infusion Fellowship</h1>
-    <p>Where Talent, Opportunity, and Culture Converge</p>
-</div>
-""", unsafe_allow_html=True)
-
-# =========================
-# OVERVIEW
-# =========================
-st.markdown("## Program Overview")
-
-st.markdown("""
-<div class="section-title">Building Future Global Leaders</div>
-
-<div class="subtext">
-The Cultural Infusion Fellowship combines international experience, professional development, and cultural learning into one immersive journey.<br><br>
-
-Designed for ambitious young individuals, the program provides opportunities to gain practical industry exposure, develop globally relevant skills, and build meaningful international connections.
-</div>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-<div class="section-title">Key Areas</div>
-
-<div class="subtext">
-Global Internships<br>
-Professional Growth<br>
-Cultural Immersion<br>
-International Networking<br>
-Career Development
-</div>
-""", unsafe_allow_html=True)
+st.title("Cultural Infusion Fellowship")
+st.subheader("Where Talent, Opportunity, and Culture Converge")
 
 st.divider()
 
 # =========================
-# EXPERIENCE
+# PROGRAM OVERVIEW
+# =========================
+st.markdown("## Program Overview")
+
+st.markdown("### Building Future Global Leaders")
+
+st.write(
+"""
+The Cultural Infusion Fellowship combines international experience, professional development, and cultural learning into one immersive journey.
+
+Designed for ambitious young individuals, the program provides opportunities to gain practical industry exposure, develop globally relevant skills, and build meaningful international connections.
+"""
+)
+
+st.markdown("### Key Areas")
+st.write("""
+- Global Internships  
+- Professional Growth  
+- Cultural Immersion  
+- International Networking  
+- Career Development  
+""")
+
+st.divider()
+
+# =========================
+# LEARNING PATHWAY
 # =========================
 st.markdown("## Learning & Experience Pathway")
 
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown("""
-    <div class="card">
-        <b>Professional Development</b><br><br>
-        Structured international internship experience<br>
-        Industry-relevant skill building<br>
-        Career readiness development<br>
-        Leadership capability enhancement
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown("### Professional Development")
+    st.write("""
+    - Structured international internship experience  
+    - Industry-relevant skill building  
+    - Career readiness development  
+    - Leadership capability enhancement  
+    """)
 
 with col2:
-    st.markdown("""
-    <div class="card">
-        <b>Global Exposure</b><br><br>
-        Immersive cultural integration<br>
-        International collaboration opportunities<br>
-        Global peer networking<br>
-        Cross-cultural real-world experience
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown("### Global Exposure")
+    st.write("""
+    - Immersive cultural integration  
+    - International collaboration opportunities  
+    - Global peer networking  
+    - Cross-cultural real-world experience  
+    """)
 
 st.divider()
 
 # =========================
-# INCLUSIONS (UPDATED TEXT ONLY)
+# PROGRAM INCLUSIONS
 # =========================
 st.markdown("## Program Inclusions")
 
-included = [
-
-("International Internship Placement",
-"High-quality structured internship with global organisations aligned to your career path."),
-
-("Learning & Development Workshops",
-"Expert-led sessions focused on professional skills and global employability."),
-
-("Career Acceleration Support",
-"Tools and guidance to strengthen long-term career growth."),
-
-("Global Talent Network Access",
-"Connect with international peers, mentors, and professionals."),
-
-("1:1 Mentorship & Advisory",
-"Ongoing guidance from experienced industry mentors."),
-
-("Professional Branding & CV Development",
-"Support to build a strong global-ready profile."),
-
-("Visa & Documentation Support",
-"Structured assistance throughout visa processing."),
-
-("Accommodation Guidance",
-"Support in finding safe and suitable housing."),
-
-("Arrival & Transition Support",
-"On-ground support for smooth onboarding."),
-
-("Cultural Immersion Experiences",
-"Curated activities for deep cultural engagement.")
-
-]
-
-for title, desc in included:
-    st.markdown(f"""
-    <div class="card">
-        <b>{title}</b><br><br>
-        {desc}
-    </div>
-    """, unsafe_allow_html=True)
+st.write("""
+- International Internship Placement: High-quality structured internship with global organisations aligned to your career path  
+- Learning & Development Workshops: Expert-led sessions focused on professional skills and global employability  
+- Career Acceleration Support: Tools and guidance to strengthen long-term career growth  
+- Global Talent Network Access: Connect with international peers, mentors, and professionals  
+- 1:1 Mentorship & Advisory: Ongoing guidance from experienced industry mentors  
+- Professional Branding & CV Development: Support to build a strong global-ready profile  
+- Visa & Documentation Support: Structured assistance throughout visa processing  
+- Accommodation Guidance: Support in finding safe and suitable housing  
+- Arrival & Transition Support: On-ground support for smooth onboarding  
+- Cultural Immersion Experiences: Curated activities for deep cultural engagement  
+""")
 
 st.divider()
 
@@ -213,44 +88,35 @@ st.divider()
 # =========================
 st.markdown("## Program Investment")
 
-pricing = [
-("4 Weeks","9,340 AUD","5,600 AUD"),
-("6 Weeks","9,585 AUD","5,600 AUD"),
-("8 Weeks","11,440 AUD","5,600 AUD"),
-("10 Weeks","13,295 AUD","5,600 AUD"),
-("12 Weeks","15,290 AUD","6,600 AUD"),
-("16 Weeks","18,730 AUD","6,600 AUD"),
-("20 Weeks","21,460 AUD","6,600 AUD"),
-("24 Weeks","24,150 AUD","6,600 AUD"),
-]
+pricing_data = {
+    "Duration": [
+        "4 Weeks", "6 Weeks", "8 Weeks", "10 Weeks",
+        "12 Weeks", "16 Weeks", "20 Weeks", "24 Weeks"
+    ],
+    "Full Program (AUD)": [
+        "9,340", "9,585", "11,440", "13,295",
+        "15,290", "18,730", "21,460", "24,150"
+    ],
+    "Without Accommodation (AUD)": [
+        "5,600", "5,600", "5,600", "5,600",
+        "6,600", "6,600", "6,600", "6,600"
+    ]
+}
 
-cols = st.columns(4)
+st.table(pricing_data)
 
-for i, (d,f,w) in enumerate(pricing):
-    with cols[i % 4]:
-        st.markdown(f"""
-        <div class="price-card">
-            <div class="price-duration">{d}</div>
-
-            <div class="price-value">
-                <b>Full Program</b><br>{f}
-            </div>
-
-            <div class="price-value">
-                <b>Without Accommodation</b><br>{w}
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+st.divider()
 
 # =========================
 # CTA
 # =========================
-st.markdown("""
-<div class="cta">
-    <h2>Begin Your Global Journey</h2>
-    <p>Join Cultural Infusion Fellowship and unlock global opportunities.</p>
-</div>
-""", unsafe_allow_html=True)
+st.markdown("## Begin Your Global Journey")
+
+st.write(
+"""
+Join Cultural Infusion Fellowship and unlock global opportunities, professional growth, and cultural exposure.
+"""
+)
 
 if st.button("Apply Now"):
-    st.success("Application received. We'll contact you soon.")
+    st.success("Application received. Our team will contact you soon.")
