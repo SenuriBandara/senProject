@@ -1,6 +1,6 @@
 # Cultural Infusion Fellowship — Final Fixed Streamlit Code
 
-```python
+
 import streamlit as st
 
 st.set_page_config(page_title="Cultural Infusion Fellowship", layout="wide")
@@ -290,10 +290,8 @@ st.write("")
 
 if st.button("Apply Now"):
     st.success("Application received. Our team will contact you shortly.")
-```
 
-## Run the app
 
-```bash
+
 streamlit run app.py
 ```
