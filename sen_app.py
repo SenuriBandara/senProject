@@ -1,89 +1,113 @@
 import streamlit as st
 
-st.set_page_config(page_title="In-Person Internship Program", page_icon="🌍", layout="wide")
+st.set_page_config(page_title="Cultural Infusion Fellowship", layout="wide")
 
-# --- HERO SECTION ---
+# ---------- STYLES ----------
 st.markdown("""
 <style>
-.hero {
-    background: linear-gradient(to right, #0f172a, #1e3a8a);
-    padding: 60px;
-    border-radius: 15px;
-    color: white;
+.main-title {
+    font-size: 42px;
+    font-weight: 700;
     text-align: center;
+    margin-top: 30px;
 }
-.card {
+
+.subtitle {
+    font-size: 20px;
+    text-align: center;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+.box {
+    background-color: #f8f9fa;
     padding: 20px;
     border-radius: 12px;
-    background: white;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    border-left: 5px solid #1e3a8a;
+}
+
+.highlight {
+    background: linear-gradient(to right, #1e3a8a, #0f172a);
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
     text-align: center;
 }
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("""
-<div class="hero">
-    <h1>In-Person Global Internship Program 🌍</h1>
-    <p>Gain international experience, travel the world, and grow your career.</p>
-</div>
-""", unsafe_allow_html=True)
+# ---------- HERO ----------
+st.markdown('<div class="highlight">', unsafe_allow_html=True)
+st.markdown("# Cultural Infusion Fellowship")
+st.markdown("### Where Talent, Opportunity, and Culture Converge")
+st.markdown("</div>", unsafe_allow_html=True)
 
 st.write("")
 
-# --- OVERVIEW ---
-st.header("Boost Your Employability")
-st.write("""
-Join a global internship experience designed to help you grow professionally and personally
-while immersing yourself in a new culture.
-""")
-
-st.divider()
-
-# --- BENEFITS ---
-st.subheader("Why Join?")
-col1, col2, col3, col4 = st.columns(4)
-
-with col1:
-    st.markdown('<div class="card">🌍 Global Experience</div>', unsafe_allow_html=True)
-with col2:
-    st.markdown('<div class="card">💼 Career Growth</div>', unsafe_allow_html=True)
-with col3:
-    st.markdown('<div class="card">🤝 Networking</div>', unsafe_allow_html=True)
-with col4:
-    st.markdown('<div class="card">🏡 Support Provided</div>', unsafe_allow_html=True)
-
-st.divider()
-
-# --- HOW IT WORKS ---
-st.subheader("How It Works")
+# ---------- DESCRIPTION ----------
 st.markdown("""
-1. Apply online  
-2. Attend interview  
-3. Get matched with internship  
-4. Start your global journey 🌏
+A youth-focused global ecosystem designed to develop globally competent talent through structured development experiences and international mobility pathways.
+
+The initiative connects youth, universities, companies, and institutions through an integrated system that links engagement with skill development and real-world global exposure.
 """)
 
 st.divider()
 
-# --- DESTINATIONS ---
-st.subheader("Top Destinations")
+# ---------- OBJECTIVES ----------
+st.markdown("## 🎯 Primary Objectives for Cultural Infusion")
 
-dest1, dest2, dest3, dest4 = st.columns(4)
+objectives = [
+"Establish a scalable global youth platform that extends Cultural Infusion’s impact beyond programs into a structured, long-term ecosystem",
+"Strengthen market positioning in intercultural development by embedding cultural intelligence into career pathways and global mobility",
+"Create sustainable revenue streams through structured programs, partnerships, and global opportunities aligned with the organisation’s mission",
+"Build a strong talent pipeline and community that continuously engages youth and feeds into multiple program offerings",
+"Expand strategic partnerships with universities, companies, and institutions to increase reach, credibility, and long-term collaboration",
+"Leverage existing demand to drive growth by converting interest into structured, repeatable programs",
+"Enhance brand visibility and global presence by positioning Cultural Infusion as a leader in youth development and intercultural capability",
+"Develop scalable systems and operating models that can be replicated across regions and markets"
+]
 
-with dest1:
-    st.info("📍 London")
-with dest2:
-    st.info("📍 New York")
-with dest3:
-    st.info("📍 Melbourne")
-with dest4:
-    st.info("📍 Tokyo")
+for i, obj in enumerate(objectives, 1):
+    st.markdown(f"**{i}.** {obj}")
 
 st.divider()
 
-# --- CTA ---
-st.subheader("Ready to start your journey?")
+# ---------- COMMERCIAL PATHWAYS ----------
+st.markdown("## 💼 Commercial Pathways")
 
-if st.button("Apply Now 🚀"):
-    st.success("Thanks for your interest! We will contact you soon.")
+pathways = {
+"Structured Internship Programs (Internal)": 
+"Delivery of in-house internship experiences within Cultural Infusion, providing youth with practical exposure and structured development.",
+
+"External Internship Placements":
+"Coordination of internship opportunities with partner organisations, connecting youth with real-world industry environments.",
+
+"Premium Global Experience Programs":
+"Curated programs combining internships, travel, and cultural immersion for international exposure.",
+
+"International Student Placement Pathways":
+"Facilitation of student placements into Australian universities through institutional partnerships.",
+
+"Cultural Exchange Programs":
+"Overseas cultural learning experiences for students focusing on global exposure.",
+
+"Sponsorship & Institutional Partnerships":
+"Collaboration with organisations aligned with youth, culture, and global mobility."
+}
+
+for title, desc in pathways.items():
+    st.markdown(f"### {title}")
+    st.markdown(f'<div class="box">{desc}</div>', unsafe_allow_html=True)
+
+st.divider()
+
+# ---------- FOOTER CTA ----------
+st.markdown("## 🚀 Strategic Vision")
+st.info("Building a scalable global ecosystem that connects youth, culture, education, and industry into one integrated growth platform.")
