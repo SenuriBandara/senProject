@@ -1,125 +1,89 @@
 import streamlit as st
-import pandas as pd
-from datetime import datetime
 
-st.set_page_config(page_title="POS System", layout="wide")
+st.set_page_config(page_title="In-Person Internship Program", page_icon="🌍", layout="wide")
 
-# ---------------- SESSION STATE ----------------
-if "cart" not in st.session_state:
-    st.session_state.cart = []
-
-if "sales" not in st.session_state:
-    st.session_state.sales = []
-
-# ---------------- INVENTORY ----------------
-products = {
-    "Apple": {"price": 2.0, "stock": 10},
-    "Banana": {"price": 1.5, "stock": 15},
-    "Milk": {"price": 3.0, "stock": 8},
-    "Bread": {"price": 2.5, "stock": 12},
-    "Rice (1kg)": {"price": 4.0, "stock": 20},
+# --- HERO SECTION ---
+st.markdown("""
+<style>
+.hero {
+    background: linear-gradient(to right, #0f172a, #1e3a8a);
+    padding: 60px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
 }
+.card {
+    padding: 20px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+</style>
+""", unsafe_allow_html=True)
 
-# ---------------- TITLE ----------------
-st.title("🛒 Smart POS System")
-st.write("Professional Streamlit-based billing system")
+st.markdown("""
+<div class="hero">
+    <h1>In-Person Global Internship Program 🌍</h1>
+    <p>Gain international experience, travel the world, and grow your career.</p>
+</div>
+""", unsafe_allow_html=True)
 
-# ---------------- CUSTOMER ----------------
-customer = st.text_input("👤 Customer Name")
+st.write("")
+
+# --- OVERVIEW ---
+st.header("Boost Your Employability")
+st.write("""
+Join a global internship experience designed to help you grow professionally and personally
+while immersing yourself in a new culture.
+""")
 
 st.divider()
 
-# ---------------- PRODUCT SELECTION ----------------
-col1, col2, col3 = st.columns(3)
+# --- BENEFITS ---
+st.subheader("Why Join?")
+col1, col2, col3, col4 = st.columns(4)
 
 with col1:
-    product = st.selectbox("Product", list(products.keys()))
-
+    st.markdown('<div class="card">🌍 Global Experience</div>', unsafe_allow_html=True)
 with col2:
-    qty = st.number_input("Quantity", min_value=1, step=1)
-
+    st.markdown('<div class="card">💼 Career Growth</div>', unsafe_allow_html=True)
 with col3:
-    st.write("")
-    add = st.button("➕ Add to Cart")
+    st.markdown('<div class="card">🤝 Networking</div>', unsafe_allow_html=True)
+with col4:
+    st.markdown('<div class="card">🏡 Support Provided</div>', unsafe_allow_html=True)
 
-# ---------------- ADD TO CART ----------------
-if add:
-    available_stock = products[product]["stock"]
-
-    if qty > available_stock:
-        st.error(f"Only {available_stock} items available in stock!")
-    else:
-        st.session_state.cart.append({
-            "Product": product,
-            "Qty": qty,
-            "Price": products[product]["price"],
-            "Total": products[product]["price"] * qty
-        })
-        st.success(f"{product} added to cart!")
-
-# ---------------- CART ----------------
-st.subheader("🧾 Cart")
-
-if st.session_state.cart:
-    df = pd.DataFrame(st.session_state.cart)
-    st.dataframe(df, use_container_width=True)
-
-    total = df["Total"].sum()
-
-    # ---------------- DISCOUNT ----------------
-    discount = st.number_input("Discount (%)", 0, 100, 0)
-    discount_value = (discount / 100) * total
-    final_total = total - discount_value
-
-    st.markdown(f"### 💰 Subtotal: ${total:.2f}")
-    st.markdown(f"### 🎁 Discount: -${discount_value:.2f}")
-    st.markdown(f"## 🧾 Grand Total: ${final_total:.2f}")
-
-    # ---------------- REMOVE ITEM ----------------
-    remove_index = st.number_input("Remove Item Index (0,1,2...)", min_value=0, step=1)
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        if st.button("❌ Remove Item"):
-            if len(st.session_state.cart) > remove_index:
-                st.session_state.cart.pop(remove_index)
-                st.rerun()
-            else:
-                st.error("Invalid index")
-
-    # ---------------- CHECKOUT ----------------
-    with col2:
-        if st.button("✅ Checkout"):
-
-            # reduce stock
-            for item in st.session_state.cart:
-                products[item["Product"]]["stock"] -= item["Qty"]
-
-            sale = {
-                "customer": customer,
-                "items": st.session_state.cart,
-                "total": final_total,
-                "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            }
-
-            st.session_state.sales.append(sale)
-            st.session_state.cart = []
-
-            st.success("Payment successful! 🎉")
-
-else:
-    st.info("Cart is empty")
-
-# ---------------- SALES HISTORY ----------------
 st.divider()
-st.subheader("📊 Sales History")
 
-if st.session_state.sales:
-    for i, sale in enumerate(st.session_state.sales[::-1]):
-        st.write(f"**Customer:** {sale['customer']}")
-        st.write(f"**Time:** {sale['time']}")
-        st.write(f"**Total:** ${sale['total']:.2f}")
-        st.write("---")
-else:
-    st.info("No sales yet")
+# --- HOW IT WORKS ---
+st.subheader("How It Works")
+st.markdown("""
+1. Apply online  
+2. Attend interview  
+3. Get matched with internship  
+4. Start your global journey 🌏
+""")
+
+st.divider()
+
+# --- DESTINATIONS ---
+st.subheader("Top Destinations")
+
+dest1, dest2, dest3, dest4 = st.columns(4)
+
+with dest1:
+    st.info("📍 London")
+with dest2:
+    st.info("📍 New York")
+with dest3:
+    st.info("📍 Melbourne")
+with dest4:
+    st.info("📍 Tokyo")
+
+st.divider()
+
+# --- CTA ---
+st.subheader("Ready to start your journey?")
+
+if st.button("Apply Now 🚀"):
+    st.success("Thanks for your interest! We will contact you soon.")
