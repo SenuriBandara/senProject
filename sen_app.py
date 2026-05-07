@@ -4,13 +4,13 @@ import pandas as pd
 st.set_page_config(page_title="Cultural Infusion Fellowship", layout="wide")
 
 # =========================
-# STYLES
+# GLOBAL STYLES
 # =========================
 st.markdown("""
 <style>
 
 .hero {
-    padding: 70px 40px;
+    padding: 75px 40px;
     background: linear-gradient(to right, #0f172a, #1e3a8a);
     color: white;
     border-radius: 18px;
@@ -18,7 +18,7 @@ st.markdown("""
 }
 
 .hero h1 {
-    font-size: 42px;
+    font-size: 44px;
     margin-bottom: 10px;
 }
 
@@ -27,10 +27,11 @@ st.markdown("""
     color: #e5e7eb;
 }
 
-.text {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.7;
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-bottom: 10px;
 }
 
 .card {
@@ -51,6 +52,34 @@ st.markdown("""
 .card-text {
     font-size: 14px;
     color: #555;
+    line-height: 1.6;
+}
+
+.overview-card {
+    background: #f8f9fa;
+    padding: 26px;
+    border-radius: 16px;
+    border-left: 5px solid #1e3a8a;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+.overview-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.overview-text {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.7;
+}
+
+.focus-box {
+    background: white;
+    padding: 22px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 </style>
@@ -69,15 +98,35 @@ st.markdown("""
 st.write("")
 
 # =========================
-# PROGRAM OVERVIEW
+# ULTRA PREMIUM PROGRAM OVERVIEW
 # =========================
 st.markdown("## Program Overview")
 
-st.markdown("""
-<div class="text">
-A youth-focused global ecosystem designed to develop globally competent talent through structured development experiences and international mobility pathways.
+col1, col2 = st.columns([2, 1])
 
-The initiative connects youth, universities, companies, and institutions through an integrated system that links engagement with skill development and real-world global exposure.
+with col1:
+    st.markdown("""
+<div class="overview-card">
+    <div class="overview-title">Global Talent Development Ecosystem</div>
+    <div class="overview-text">
+        A youth-focused global ecosystem designed to develop globally competent talent through structured development experiences and international mobility pathways.<br><br>
+
+        The initiative connects youth, universities, companies, and institutions through an integrated system that links engagement with skill development and real-world global exposure.
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+with col2:
+    st.markdown("""
+<div class="focus-box">
+    <div class="overview-title">Focus Areas</div>
+    <div class="overview-text">
+        International Mobility<br>
+        Skill Development<br>
+        Industry Exposure<br>
+        Cross-cultural Learning<br>
+        Global Career Pathways
+    </div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -111,7 +160,7 @@ with col2:
 st.divider()
 
 # =========================
-# WHAT'S INCLUDED (PREMIUM CARDS)
+# PROGRAM INCLUSIONS (PREMIUM CARDS)
 # =========================
 st.markdown("## Program Inclusions")
 
@@ -132,16 +181,16 @@ included = [
 "Connect and collaborate with a diverse international network."),
 
 ("Alumni Mentorship & Guidance",
-"Ongoing support from past participants and mentors."),
+"Ongoing support from experienced mentors and alumni."),
 
 ("CV & Profile Enhancement",
 "Professional support to improve employability documents."),
 
 ("1-1 Advisory Support",
-"Dedicated personal guidance throughout the program."),
+"Dedicated personal guidance throughout the program journey."),
 
 ("24/7 Support",
-"Continuous participant assistance at all times."),
+"Continuous assistance across the full program duration."),
 
 ("Visa Guidance",
 "Structured support for visa preparation and documentation."),
@@ -150,10 +199,10 @@ included = [
 "Support in securing housing where applicable."),
 
 ("Airport Arrival Support",
-"Arrival coordination and assistance in destination."),
+"Arrival coordination and onboarding assistance."),
 
 ("Cultural & Social Integration",
-"Activities and events for cultural immersion.")
+"Activities and events for immersion and networking.")
 ]
 
 def render_cards(data):
@@ -202,7 +251,7 @@ st.divider()
 # =========================
 st.markdown("## Ready to Begin Your Journey")
 
-st.write("Submit your application to join the Cultural Infusion Fellowship.")
+st.write("Submit your application to join the Cultural Infusion Fellowship program.")
 
 if st.button("Apply Now"):
-    st.success("Application received. Our team will contact you soon.")
+    st.success("Application received. Our team will contact you shortly.")
