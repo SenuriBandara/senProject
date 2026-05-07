@@ -192,7 +192,7 @@ for title, desc in included:
 st.divider()
 
 # =========================
-# PROGRAM INVESTMENT (FIXED - NO DIV)
+# PROGRAM INVESTMENT (FINAL BOX STYLE)
 # =========================
 st.markdown("## Program Investment")
 
@@ -216,11 +216,13 @@ for i, (duration, full, without) in enumerate(pricing):
         st.markdown(f"""
 ### {duration}
 
+---
+
 **Full Program**  
-💰 {full}
+{full}
 
 **Without Accommodation**  
-🏠 {without}
+{without}
 
 ---
 """)
