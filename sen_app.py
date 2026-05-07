@@ -55,7 +55,7 @@ st.markdown("""
     color: #111827;
 }
 
-/* WHITE INVESTMENT BOX */
+/* PRICE BOX */
 .price-box {
     background: white;
     padding: 20px;
@@ -65,25 +65,6 @@ st.markdown("""
     margin-bottom: 20px;
     text-align: center;
     color: #111827;
-    transition: 0.2s ease-in-out;
-}
-
-.price-box:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-}
-
-.price-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 10px;
-}
-
-.price-label {
-    font-size: 14px;
-    color: #374151;
-    margin-top: 10px;
 }
 
 /* CTA */
@@ -100,6 +81,27 @@ st.markdown("""
     color: #e2e8f0;
 }
 
+/* SMALL INCLUSION BOX */
+.small-card {
+    background: white;
+    padding: 16px;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    border-left: 4px solid #1e3a8a;
+    margin-bottom: 12px;
+    color: #111827;
+}
+
+.small-card b {
+    font-size: 15px;
+}
+
+.small-card p {
+    font-size: 13px;
+    color: #374151;
+    margin-top: 5px;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -114,7 +116,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # =========================
-# PROGRAM OVERVIEW
+# OVERVIEW
 # =========================
 st.markdown("## Program Overview")
 
@@ -174,56 +176,52 @@ with col2:
 st.divider()
 
 # =========================
-# INCLUSIONS
+# PROGRAM INCLUSIONS (IMPROVED UI)
 # =========================
 st.markdown("## Program Inclusions")
 
 included = [
 
 ("International Internship Placement",
-"High-quality structured internship with global organisations aligned to your career path."),
-
+"Structured global internship aligned to your career path."),
 ("Learning & Development Workshops",
-"Expert-led sessions focused on professional skills and global employability."),
-
+"Expert-led sessions for professional growth."),
 ("Career Acceleration Support",
-"Tools and guidance to strengthen long-term career growth."),
-
+"Tools to strengthen employability."),
 ("Global Talent Network Access",
-"Connect with international peers, mentors, and professionals."),
-
+"Connect with international peers and mentors."),
 ("1:1 Mentorship & Advisory",
-"Ongoing guidance from experienced industry mentors."),
-
+"Guidance from experienced professionals."),
 ("Professional Branding & CV Development",
-"Support to build a strong global-ready profile."),
-
+"Build a strong global-ready profile."),
 ("Visa & Documentation Support",
-"Structured assistance throughout visa processing."),
-
+"Assistance throughout visa process."),
 ("Accommodation Guidance",
-"Support in finding safe and suitable housing."),
-
+"Support in finding safe housing."),
 ("Arrival & Transition Support",
-"On-ground support for smooth onboarding."),
-
+"Smooth onboarding support."),
 ("Cultural Immersion Experiences",
-"Curated activities for deep cultural engagement.")
+"Activities for real cultural engagement.")
 
 ]
 
-for title, desc in included:
-    st.markdown(f"""
-    <div class="card">
-        <b>{title}</b><br><br>
-        {desc}
-    </div>
-    """, unsafe_allow_html=True)
+cols = st.columns(2)
+
+for i, (title, desc) in enumerate(included):
+
+    with cols[i % 2]:
+
+        st.markdown(f"""
+<div class="small-card">
+<b>{title}</b><br>
+<p>{desc}</p>
+</div>
+""", unsafe_allow_html=True)
 
 st.divider()
 
 # =========================
-# PROGRAM INVESTMENT (WHITE BOXES FINAL)
+# PROGRAM INVESTMENT
 # =========================
 st.markdown("## Program Investment")
 
@@ -247,12 +245,13 @@ for i, (duration, full, without) in enumerate(pricing):
         st.markdown(f"""
 <div class="price-box">
 
-<div class="price-title">{duration}</div>
+<b>{duration}</b><br><br>
 
-<b>Full Program</b><br>
-{full}
+Full Program<br>
+{full}<br><br>
 
-<div class="price-label"><b>Without Accommodation</b><br>{without}</div>
+Without Accommodation<br>
+{without}
 
 </div>
 """, unsafe_allow_html=True)
