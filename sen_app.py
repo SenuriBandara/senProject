@@ -290,8 +290,4 @@ st.write("")
 
 if st.button("Apply Now"):
     st.success("Application received. Our team will contact you shortly.")
-
-
-
-streamlit run app.py
 ```
