@@ -1,4 +1,3 @@
-
 # Cultural Infusion Fellowship — Final Fixed Streamlit Code
 
 ```python
@@ -291,4 +290,10 @@ st.write("")
 
 if st.button("Apply Now"):
     st.success("Application received. Our team will contact you shortly.")
+```
+
+## Run the app
+
+```bash
+streamlit run app.py
 ```
