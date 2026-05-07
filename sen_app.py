@@ -4,82 +4,80 @@ import pandas as pd
 st.set_page_config(page_title="Cultural Infusion Fellowship", layout="wide")
 
 # =========================
-# GLOBAL STYLES
+# GLOBAL STYLES (CLEAN PROFESSIONAL UI)
 # =========================
 st.markdown("""
 <style>
 
 .hero {
-    padding: 75px 40px;
-    background: linear-gradient(to right, #0f172a, #1e3a8a);
+    padding: 85px 50px;
+    background: linear-gradient(to right, #0b1220, #1e3a8a);
     color: white;
     border-radius: 18px;
     text-align: center;
 }
 
 .hero h1 {
-    font-size: 44px;
+    font-size: 46px;
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
 .hero p {
     font-size: 18px;
-    color: #e5e7eb;
+    color: #dbeafe;
+    max-width: 800px;
+    margin: auto;
 }
 
 .section-title {
     font-size: 28px;
     font-weight: 700;
     margin-top: 50px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: #0f172a;
+}
+
+.subtext {
+    font-size: 16px;
+    color: #475569;
+    line-height: 1.8;
 }
 
 .card {
     background: #ffffff;
-    padding: 18px;
+    padding: 20px;
     border-radius: 14px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
     border-left: 4px solid #1e3a8a;
     height: 100%;
 }
 
 .card-title {
     font-weight: 600;
-    margin-bottom: 6px;
-    color: #111;
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #0f172a;
 }
 
 .card-text {
     font-size: 14px;
-    color: #555;
+    color: #475569;
     line-height: 1.6;
 }
 
-.overview-card {
-    background: #f8f9fa;
+.highlight-box {
+    background: #f1f5f9;
     padding: 26px;
     border-radius: 16px;
     border-left: 5px solid #1e3a8a;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-}
-
-.overview-title {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 12px;
-}
-
-.overview-text {
-    font-size: 15px;
-    color: #444;
-    line-height: 1.7;
 }
 
 .focus-box {
-    background: white;
-    padding: 22px;
+    background: #ffffff;
+    padding: 24px;
     border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
 }
 
 </style>
@@ -91,14 +89,14 @@ st.markdown("""
 st.markdown("""
 <div class="hero">
     <h1>Cultural Infusion Fellowship</h1>
-    <p>Where Talent, Opportunity, and Culture Converge</p>
+    <p>A structured global development ecosystem enabling young talent to gain international exposure, professional capability, and cross-cultural competence through immersive experiences.</p>
 </div>
 """, unsafe_allow_html=True)
 
 st.write("")
 
 # =========================
-# ULTRA PREMIUM PROGRAM OVERVIEW
+# PROGRAM OVERVIEW (PROFESSIONAL TONE)
 # =========================
 st.markdown("## Program Overview")
 
@@ -106,12 +104,12 @@ col1, col2 = st.columns([2, 1])
 
 with col1:
     st.markdown("""
-<div class="overview-card">
-    <div class="overview-title">Global Talent Development Ecosystem</div>
-    <div class="overview-text">
-        A youth-focused global ecosystem designed to develop globally competent talent through structured development experiences and international mobility pathways.<br><br>
+<div class="highlight-box">
+    <div class="section-title">Global Talent Development Ecosystem</div>
+    <div class="subtext">
+        The Cultural Infusion Fellowship is a structured international development initiative designed to prepare young individuals for globally connected careers.<br><br>
 
-        The initiative connects youth, universities, companies, and institutions through an integrated system that links engagement with skill development and real-world global exposure.
+        It integrates professional experience, cultural immersion, and skills development into a unified pathway that connects participants with universities, companies, and international opportunities.
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -119,12 +117,12 @@ with col1:
 with col2:
     st.markdown("""
 <div class="focus-box">
-    <div class="overview-title">Focus Areas</div>
-    <div class="overview-text">
+    <div class="section-title">Strategic Focus</div>
+    <div class="subtext">
         International Mobility<br>
-        Skill Development<br>
+        Professional Skill Development<br>
+        Cross-Cultural Competence<br>
         Industry Exposure<br>
-        Cross-cultural Learning<br>
         Global Career Pathways
     </div>
 </div>
@@ -135,26 +133,26 @@ st.divider()
 # =========================
 # EXPERIENCE
 # =========================
-st.markdown("## Experience Overview")
+st.markdown("## Learning & Experience Pathway")
 
 col1, col2 = st.columns(2)
 
 with col1:
     st.markdown("""
 ### Professional Development
-- Real-world internship exposure  
-- Industry-based learning environments  
-- Skill and career development  
-- Leadership growth opportunities  
+- Structured internship placement in real working environments  
+- Industry-relevant skill development exposure  
+- Career readiness and leadership capability building  
+- Practical workplace learning and mentorship  
 """)
 
 with col2:
     st.markdown("""
 ### Global Exposure
-- Cultural immersion in new environments  
-- International peer engagement  
-- Community and networking opportunities  
-- Cross-cultural collaboration  
+- Immersive cultural and social integration  
+- Collaboration with international peers  
+- Access to global community networks  
+- Experiential learning in diverse environments  
 """)
 
 st.divider()
@@ -166,43 +164,43 @@ st.markdown("## Program Inclusions")
 
 included = [
 ("International Internship Placement",
-"Real-world in-person internship experience in a global environment."),
+"Structured in-person professional experience within global organisations."),
 
-("Workshop & Learning Series",
-"Structured sessions designed to build practical and professional skills."),
+("Learning & Workshop Series",
+"Curated learning sessions focused on practical and professional growth."),
 
-("Professional Development Resources",
-"Tools and materials to support continuous career growth."),
+("Career Development Framework",
+"Tools and guidance to enhance long-term employability and career clarity."),
 
-("Career Acceleration Training",
-"Focused training to improve employability and job readiness."),
+("Employability Training",
+"Targeted preparation for global job market readiness."),
 
-("Global Community Access",
-"Connect and collaborate with a diverse international network."),
+("Global Network Access",
+"Connection with an international community of peers and professionals."),
 
-("Alumni Mentorship & Guidance",
-"Ongoing support from experienced mentors and alumni."),
+("Mentorship Support",
+"Guidance from experienced professionals and alumni network."),
 
-("CV & Profile Enhancement",
-"Professional support to improve employability documents."),
+("Professional Profile Development",
+"Support in CV building and personal branding enhancement."),
 
-("1-1 Advisory Support",
-"Dedicated personal guidance throughout the program journey."),
+("Dedicated Advisory Support",
+"One-to-one guidance throughout the program journey."),
 
-("24/7 Support",
-"Continuous assistance across the full program duration."),
+("Continuous Program Support",
+"Operational and participant support throughout the experience."),
 
-("Visa Guidance",
-"Structured support for visa preparation and documentation."),
+("Visa Advisory Support",
+"Structured guidance for visa preparation and compliance."),
 
 ("Accommodation Assistance",
-"Support in securing housing where applicable."),
+"Support in identifying suitable housing options."),
 
-("Airport Arrival Support",
-"Arrival coordination and onboarding assistance."),
+("Arrival Coordination",
+"Onboarding and arrival assistance in destination country."),
 
-("Cultural & Social Integration",
-"Activities and events for immersion and networking.")
+("Cultural Integration Activities",
+"Structured experiences to support adaptation and engagement.")
 ]
 
 def render_cards(data):
@@ -223,7 +221,7 @@ st.divider()
 # =========================
 # PRICING TABLE
 # =========================
-st.markdown("## Program Pricing")
+st.markdown("## Program Investment")
 
 data = [
 ("4 Weeks", 9340, 5600),
@@ -238,8 +236,8 @@ data = [
 
 df = pd.DataFrame(data, columns=[
     "Duration",
-    "Full Program (AU$)",
-    "Without Accommodation (AU$)"
+    "Full Program (AUD)",
+    "Without Accommodation (AUD)"
 ])
 
 st.table(df)
@@ -249,9 +247,9 @@ st.divider()
 # =========================
 # CTA
 # =========================
-st.markdown("## Ready to Begin Your Journey")
+st.markdown("## Application")
 
-st.write("Submit your application to join the Cultural Infusion Fellowship program.")
+st.write("Submit your application to be considered for upcoming program intakes.")
 
 if st.button("Apply Now"):
-    st.success("Application received. Our team will contact you shortly.")
+    st.success("Your application has been received. Our team will be in contact with you shortly.")
