@@ -29,15 +29,7 @@ st.markdown("""
     color: #e2e8f0;
 }
 
-/* SECTION TITLE */
-.section-title {
-    font-size: 28px;
-    font-weight: 700;
-    color: #0f172a;
-    margin: 20px 0;
-}
-
-/* PROGRAM OVERVIEW (WHITE TEXT) */
+/* PROGRAM OVERVIEW (WHITE TEXT FIX) */
 .overview-box {
     background: linear-gradient(120deg, #0b1220, #1e3a8a);
     padding: 40px;
@@ -54,7 +46,7 @@ st.markdown("""
 }
 
 .overview-box p {
-    color: #e2e8f0;
+    color: #ffffff;
     font-size: 16px;
     line-height: 1.8;
 }
@@ -131,18 +123,18 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # =========================
-# PROGRAM OVERVIEW (UPDATED)
+# PROGRAM OVERVIEW (UPDATED TEXT ONLY)
 # =========================
 st.markdown("""
 <div class="overview-box">
     <h2>Program Overview</h2>
 
     <p>
-        The Cultural Infusion Fellowship is a globally connected development experience designed to shape future-ready talent.
-        It blends international exposure, professional development, and cultural immersion into one structured journey.
-        <br><br>
-        Participants gain real-world experience, build globally relevant skills, and engage with diverse cultures and industries,
-        preparing them for impactful international careers.
+        Building Future Global Leaders<br><br>
+
+        The Cultural Infusion Fellowship combines international experience, professional development, and cultural learning into one immersive journey.<br><br>
+
+        Designed for ambitious young individuals, the program provides opportunities to gain practical industry exposure, develop globally relevant skills, and build meaningful international connections.
     </p>
 </div>
 """, unsafe_allow_html=True)
