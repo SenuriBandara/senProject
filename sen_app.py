@@ -1,6 +1,9 @@
 import streamlit as st
 
-st.set_page_config(page_title="Cultural Infusion Fellowship", layout="wide")
+st.set_page_config(
+    page_title="Cultural Infusion Fellowship",
+    layout="wide"
+)
 
 # =========================
 # GLOBAL STYLES
@@ -12,17 +15,18 @@ st.markdown("""
     background-color: #ffffff;
 }
 
+/* HERO SECTION */
 .hero {
     padding: 90px 50px;
     background: linear-gradient(135deg, #0b1220 0%, #1e3a8a 100%);
     color: white;
-    border-radius: 20px;
+    border-radius: 22px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .hero h1 {
-    font-size: 52px;
+    font-size: 54px;
     font-weight: 700;
     margin-bottom: 15px;
 }
@@ -32,9 +36,10 @@ st.markdown("""
     color: #dbeafe;
     max-width: 850px;
     margin: auto;
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
+/* SECTION TITLES */
 .section-title {
     font-size: 30px;
     font-weight: 700;
@@ -42,15 +47,17 @@ st.markdown("""
     color: #0f172a;
 }
 
+/* GENERAL TEXT */
 .subtext {
     font-size: 16px;
     color: #475569;
     line-height: 1.9;
 }
 
+/* PROGRAM OVERVIEW */
 .overview-box {
     background: #f8fafc;
-    padding: 30px;
+    padding: 32px;
     border-radius: 18px;
     border-left: 5px solid #1e3a8a;
     height: 100%;
@@ -58,12 +65,13 @@ st.markdown("""
 
 .focus-box {
     background: white;
-    padding: 28px;
+    padding: 30px;
     border-radius: 18px;
-    box-shadow: 0 6px 20px rgba(15,23,42,0.08);
+    box-shadow: 0 6px 18px rgba(15,23,42,0.08);
     height: 100%;
 }
 
+/* INCLUSION CARDS */
 .card {
     background: white;
     padding: 22px;
@@ -87,6 +95,7 @@ st.markdown("""
     line-height: 1.7;
 }
 
+/* PRICING CARDS */
 .price-card {
     background: white;
     padding: 24px;
@@ -111,16 +120,17 @@ st.markdown("""
     line-height: 1.7;
 }
 
+/* CTA SECTION */
 .cta-box {
     background: linear-gradient(135deg, #0b1220 0%, #1e3a8a 100%);
-    padding: 50px;
-    border-radius: 20px;
+    padding: 55px;
+    border-radius: 22px;
     text-align: center;
     color: white;
 }
 
 .cta-box h2 {
-    font-size: 34px;
+    font-size: 36px;
     margin-bottom: 15px;
 }
 
@@ -139,6 +149,7 @@ st.markdown("""
 st.markdown("""
 <div class="hero">
     <h1>Cultural Infusion Fellowship</h1>
+
     <p>
         Where Talent, Opportunity, and Culture Converge
     </p>
@@ -153,21 +164,32 @@ st.markdown("## Program Overview")
 col1, col2 = st.columns([2, 1])
 
 with col1:
+
     st.markdown("""
     <div class="overview-box">
-        <div class="section-title">Building Future Global Leaders</div>
+
+        <div class="section-title">
+            Building Future Global Leaders
+        </div>
+
         <div class="subtext">
             The Cultural Infusion Fellowship combines international experience, professional development, and cultural learning into one immersive journey.<br><br>
 
             Designed for ambitious young individuals, the program provides opportunities to gain practical industry exposure, develop globally relevant skills, and build meaningful international connections in diverse environments.
         </div>
+
     </div>
     """, unsafe_allow_html=True)
 
 with col2:
+
     st.markdown("""
     <div class="focus-box">
-        <div class="section-title">Key Areas</div>
+
+        <div class="section-title">
+            Key Areas
+        </div>
+
         <div class="subtext">
             Global Internships<br>
             Professional Growth<br>
@@ -175,6 +197,7 @@ with col2:
             International Networking<br>
             Career Development
         </div>
+
     </div>
     """, unsafe_allow_html=True)
 
@@ -189,8 +212,10 @@ st.markdown("## Learning & Experience Pathway")
 exp1, exp2 = st.columns(2)
 
 with exp1:
+
     st.markdown("""
     ### Professional Development
+
     - Structured international internship experience  
     - Industry-relevant skill building  
     - Career readiness development  
@@ -198,8 +223,10 @@ with exp1:
     """)
 
 with exp2:
+
     st.markdown("""
     ### Global Exposure
+
     - Immersive cultural integration  
     - International collaboration opportunities  
     - Global peer networking  
@@ -215,6 +242,7 @@ st.divider()
 st.markdown("## Program Inclusions")
 
 included = [
+
 ("International Internship Placement",
 "Structured professional experience within global organisations."),
 
@@ -244,19 +272,32 @@ included = [
 
 ("Cultural Integration Activities",
 "Experiences and events designed for immersion and networking.")
+
 ]
 
 def render_cards(data):
+
     cols = st.columns(3)
 
     for i, (title, desc) in enumerate(data):
+
         with cols[i % 3]:
-            st.markdown(f"""
+
+            card_html = f"""
             <div class="card">
-                <div class="card-title">{title}</div>
-                <div class="card-text">{desc}</div>
+
+                <div class="card-title">
+                    {title}
+                </div>
+
+                <div class="card-text">
+                    {desc}
+                </div>
+
             </div>
-            """, unsafe_allow_html=True)
+            """
+
+            st.markdown(card_html, unsafe_allow_html=True)
 
 render_cards(included)
 
@@ -282,22 +323,30 @@ pricing = [
 price_cols = st.columns(4)
 
 for i, (duration, full, without) in enumerate(pricing):
+
     with price_cols[i % 4]:
-        st.markdown(f"""
+
+        card_html = f"""
         <div class="price-card">
-            <div class="price-duration">{duration}</div>
+
+            <div class="price-duration">
+                {duration}
+            </div>
 
             <div class="price-value">
                 <b>Full Program</b><br>
                 {full}
             </div>
 
-            <div class="price-value">
+            <div class="price-value" style="margin-top:15px;">
                 <b>Without Accommodation</b><br>
                 {without}
             </div>
+
         </div>
-        """, unsafe_allow_html=True)
+        """
+
+        st.markdown(card_html, unsafe_allow_html=True)
 
 st.write("")
 st.divider()
@@ -307,10 +356,15 @@ st.divider()
 # =========================
 st.markdown("""
 <div class="cta-box">
-    <h2>Begin Your Global Journey</h2>
+
+    <h2>
+        Begin Your Global Journey
+    </h2>
+
     <p>
         Take the next step toward international experience, professional growth, and global exposure through the Cultural Infusion Fellowship.
     </p>
+
 </div>
 """, unsafe_allow_html=True)
 
