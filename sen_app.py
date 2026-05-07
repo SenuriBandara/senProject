@@ -3,10 +3,33 @@ import streamlit as st
 st.set_page_config(page_title="Cultural Infusion Fellowship", layout="wide")
 
 # =========================
-# CSS
+# ANIMATION CSS
 # =========================
 st.markdown("""
 <style>
+
+/* GLOBAL PAGE */
+.block-container {
+    padding: 2rem 5rem;
+    max-width: 100%;
+}
+
+/* FADE-IN ANIMATION */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* APPLY ANIMATION */
+.hero, .overview-box, .card, .small-card, .price-box, .cta {
+    animation: fadeUp 0.8s ease-in-out;
+}
 
 /* HERO */
 .hero {
@@ -21,7 +44,6 @@ st.markdown("""
 .hero h1 {
     font-size: 56px;
     font-weight: 800;
-    color: white;
 }
 
 .hero p {
@@ -29,7 +51,7 @@ st.markdown("""
     color: #e2e8f0;
 }
 
-/* PROGRAM OVERVIEW (WHITE TEXT FIX) */
+/* OVERVIEW */
 .overview-box {
     background: linear-gradient(120deg, #0b1220, #1e3a8a);
     padding: 40px;
@@ -39,19 +61,7 @@ st.markdown("""
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.overview-box h2 {
-    color: white;
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-.overview-box p {
-    color: #ffffff;
-    font-size: 16px;
-    line-height: 1.8;
-}
-
-/* CARD */
+/* CARDS */
 .card {
     background: white;
     padding: 22px;
@@ -59,7 +69,16 @@ st.markdown("""
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     border-top: 4px solid #1e3a8a;
     margin-bottom: 18px;
-    color: #111827;
+}
+
+/* SMALL CARDS */
+.small-card {
+    background: white;
+    padding: 16px;
+    border-radius: 14px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    border-left: 4px solid #1e3a8a;
+    margin-bottom: 12px;
 }
 
 /* PRICE BOX */
@@ -69,30 +88,13 @@ st.markdown("""
     border-radius: 16px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     border: 1px solid #e5e7eb;
-    margin-bottom: 20px;
     text-align: center;
-    color: #111827;
+    margin-bottom: 20px;
+    transition: 0.3s ease;
 }
 
-/* SMALL CARD */
-.small-card {
-    background: white;
-    padding: 16px;
-    border-radius: 14px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-    border-left: 4px solid #1e3a8a;
-    margin-bottom: 12px;
-    color: #111827;
-}
-
-.small-card b {
-    font-size: 15px;
-}
-
-.small-card p {
-    font-size: 13px;
-    color: #374151;
-    margin-top: 5px;
+.price-box:hover {
+    transform: translateY(-5px);
 }
 
 /* CTA */
@@ -103,10 +105,6 @@ st.markdown("""
     border-radius: 20px;
     text-align: center;
     margin-top: 40px;
-}
-
-.cta p {
-    color: #e2e8f0;
 }
 
 </style>
@@ -123,19 +121,22 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # =========================
-# PROGRAM OVERVIEW (UPDATED TEXT ONLY)
+# OVERVIEW (ANIMATED SECTION)
 # =========================
 st.markdown("""
 <div class="overview-box">
-    <h2>Program Overview</h2>
+<h2>Program Overview</h2>
 
-    <p>
-        Building Future Global Leaders<br><br>
+<p>
+Building Future Global Leaders<br><br>
 
-        The Cultural Infusion Fellowship combines international experience, professional development, and cultural learning into one immersive journey.<br><br>
+The Cultural Infusion Fellowship is a globally connected development experience designed to shape future-ready talent.<br><br>
 
-        Designed for ambitious young individuals, the program provides opportunities to gain practical industry exposure, develop globally relevant skills, and build meaningful international connections.
-    </p>
+It blends international exposure, professional development, and cultural immersion into one structured journey.<br><br>
+
+Participants gain real-world experience, build globally relevant skills, and engage with diverse cultures and industries.
+</p>
+
 </div>
 """, unsafe_allow_html=True)
 
@@ -197,7 +198,7 @@ for i, (title, desc) in enumerate(included):
         st.markdown(f"""
 <div class="small-card">
 <b>{title}</b><br>
-<p>{desc}</p>
+{desc}
 </div>
 """, unsafe_allow_html=True)
 
