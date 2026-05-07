@@ -55,6 +55,37 @@ st.markdown("""
     color: #111827;
 }
 
+/* WHITE INVESTMENT BOX */
+.price-box {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border: 1px solid #e5e7eb;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #111827;
+    transition: 0.2s ease-in-out;
+}
+
+.price-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+.price-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.price-label {
+    font-size: 14px;
+    color: #374151;
+    margin-top: 10px;
+}
+
 /* CTA */
 .cta {
     background: linear-gradient(120deg, #0b1220, #1e3a8a);
@@ -192,7 +223,7 @@ for title, desc in included:
 st.divider()
 
 # =========================
-# PROGRAM INVESTMENT (FINAL BOX STYLE)
+# PROGRAM INVESTMENT (WHITE BOXES FINAL)
 # =========================
 st.markdown("## Program Investment")
 
@@ -214,20 +245,17 @@ for i, (duration, full, without) in enumerate(pricing):
     with cols[i % 4]:
 
         st.markdown(f"""
-### {duration}
+<div class="price-box">
 
----
+<div class="price-title">{duration}</div>
 
-**Full Program**  
+<b>Full Program</b><br>
 {full}
 
-**Without Accommodation**  
-{without}
+<div class="price-label"><b>Without Accommodation</b><br>{without}</div>
 
----
-""")
-
-st.divider()
+</div>
+""", unsafe_allow_html=True)
 
 # =========================
 # CTA
