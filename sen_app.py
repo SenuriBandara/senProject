@@ -29,7 +29,7 @@ st.markdown("""
     color: #e2e8f0;
 }
 
-/* TEXT */
+/* SECTION TITLE */
 .section-title {
     font-size: 28px;
     font-weight: 700;
@@ -37,8 +37,9 @@ st.markdown("""
     margin: 20px 0;
 }
 
+/* SUBTEXT */
 .subtext {
-    color: #334155;
+    color: #1f2937;
     font-size: 16px;
     line-height: 1.8;
 }
@@ -54,29 +55,7 @@ st.markdown("""
     color: #111827;
 }
 
-/* PRICE CARD */
-.price-card {
-    background: white;
-    padding: 25px;
-    border-radius: 18px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    border-top: 4px solid #1e3a8a;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #111827;
-}
-
-.price-duration {
-    font-size: 20px;
-    font-weight: 700;
-    color: #0f172a;
-}
-
-.price-value {
-    margin-top: 10px;
-    color: #334155;
-}
-
+/* CTA */
 .cta {
     background: linear-gradient(120deg, #0b1220, #1e3a8a);
     color: white;
@@ -84,6 +63,10 @@ st.markdown("""
     border-radius: 20px;
     text-align: center;
     margin-top: 40px;
+}
+
+.cta p {
+    color: #e2e8f0;
 }
 
 </style>
@@ -100,7 +83,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # =========================
-# OVERVIEW
+# PROGRAM OVERVIEW
 # =========================
 st.markdown("## Program Overview")
 
@@ -160,7 +143,7 @@ with col2:
 st.divider()
 
 # =========================
-# INCLUSIONS (UPDATED TEXT ONLY)
+# INCLUSIONS
 # =========================
 st.markdown("## Program Inclusions")
 
@@ -209,38 +192,40 @@ for title, desc in included:
 st.divider()
 
 # =========================
-# PRICING
+# PROGRAM INVESTMENT (FIXED - NO DIV)
 # =========================
 st.markdown("## Program Investment")
 
 pricing = [
-("4 Weeks","9,340 AUD","5,600 AUD"),
-("6 Weeks","9,585 AUD","5,600 AUD"),
-("8 Weeks","11,440 AUD","5,600 AUD"),
-("10 Weeks","13,295 AUD","5,600 AUD"),
-("12 Weeks","15,290 AUD","6,600 AUD"),
-("16 Weeks","18,730 AUD","6,600 AUD"),
-("20 Weeks","21,460 AUD","6,600 AUD"),
-("24 Weeks","24,150 AUD","6,600 AUD"),
+("4 Weeks", "9,340 AUD", "5,600 AUD"),
+("6 Weeks", "9,585 AUD", "5,600 AUD"),
+("8 Weeks", "11,440 AUD", "5,600 AUD"),
+("10 Weeks", "13,295 AUD", "5,600 AUD"),
+("12 Weeks", "15,290 AUD", "6,600 AUD"),
+("16 Weeks", "18,730 AUD", "6,600 AUD"),
+("20 Weeks", "21,460 AUD", "6,600 AUD"),
+("24 Weeks", "24,150 AUD", "6,600 AUD"),
 ]
 
 cols = st.columns(4)
 
-for i, (d,f,w) in enumerate(pricing):
+for i, (duration, full, without) in enumerate(pricing):
+
     with cols[i % 4]:
+
         st.markdown(f"""
-        <div class="price-card">
-            <div class="price-duration">{d}</div>
+### {duration}
 
-            <div class="price-value">
-                <b>Full Program</b><br>{f}
-            </div>
+**Full Program**  
+💰 {full}
 
-            <div class="price-value">
-                <b>Without Accommodation</b><br>{w}
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+**Without Accommodation**  
+🏠 {without}
+
+---
+""")
+
+st.divider()
 
 # =========================
 # CTA
