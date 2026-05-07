@@ -3,18 +3,18 @@ import streamlit as st
 st.set_page_config(page_title="Cultural Infusion Fellowship", layout="wide")
 
 # =========================
-# ANIMATION CSS
+# CSS
 # =========================
 st.markdown("""
 <style>
 
-/* GLOBAL PAGE */
+/* GLOBAL LAYOUT */
 .block-container {
     padding: 2rem 5rem;
     max-width: 100%;
 }
 
-/* FADE-IN ANIMATION */
+/* ANIMATION */
 @keyframes fadeUp {
     0% {
         opacity: 0;
@@ -51,7 +51,7 @@ st.markdown("""
     color: #e2e8f0;
 }
 
-/* OVERVIEW */
+/* OVERVIEW BOX (BLUE THEME) */
 .overview-box {
     background: linear-gradient(120deg, #0b1220, #1e3a8a);
     padding: 40px;
@@ -61,35 +61,38 @@ st.markdown("""
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* CARDS */
+/* CARD (BLUE THEME) */
 .card {
-    background: white;
+    background: linear-gradient(120deg, #0b1220, #1e3a8a);
     padding: 22px;
     border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    border-top: 4px solid #1e3a8a;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.08);
     margin-bottom: 18px;
+    color: white;
 }
 
-/* SMALL CARDS */
+/* SMALL CARD (BLUE THEME) */
 .small-card {
-    background: white;
+    background: linear-gradient(120deg, #0b1220, #1e3a8a);
     padding: 16px;
     border-radius: 14px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-    border-left: 4px solid #1e3a8a;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    border-left: 4px solid #60a5fa;
     margin-bottom: 12px;
+    color: white;
 }
 
-/* PRICE BOX */
+/* PRICE BOX (BLUE THEME) */
 .price-box {
-    background: white;
+    background: linear-gradient(120deg, #0b1220, #1e3a8a);
     padding: 20px;
     border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    border: 1px solid #e5e7eb;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border: 1px solid rgba(255,255,255,0.08);
     text-align: center;
     margin-bottom: 20px;
+    color: white;
     transition: 0.3s ease;
 }
 
@@ -107,6 +110,10 @@ st.markdown("""
     margin-top: 40px;
 }
 
+.cta p {
+    color: #e2e8f0;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -121,7 +128,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # =========================
-# OVERVIEW (ANIMATED SECTION)
+# PROGRAM OVERVIEW
 # =========================
 st.markdown("""
 <div class="overview-box">
